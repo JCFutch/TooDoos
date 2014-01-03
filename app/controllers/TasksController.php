@@ -19,7 +19,13 @@ class TasksController extends BaseController {
 	 */
 	public function create()
 	{
-        return View::make('tasks.create');
+	
+	  //As more categories are added by the user, they will show up in the drop down list
+	  $categories = DB::table('tasks')->lists('category', 'id');
+	
+	
+	  return View::make('tasks.create')
+		->with('categories', $categories);
 	}
 
 	/**
@@ -128,5 +134,6 @@ class TasksController extends BaseController {
 		return View::make('home')
 			->with('tasks', $tasks);
 	}
-
+	
+	
 }

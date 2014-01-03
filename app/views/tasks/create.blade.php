@@ -6,10 +6,16 @@
 
 	{{ Form::label('taskname', 'Task Name') }}
 	{{ Form::text('taskname') }}
-	
+	@if( ! $categories)
 	{{ Form::label('category', 'Category') }}
 	{{ Form::text('category') }}
+	@else
+	{{ Form::label('category', 'Category') }}
+	{{ Form::select('category', array('' => ' -- Select --') + $categories, Input::old('category')) }}
 	
+	{{ Form::label('or', 'Or Add New Category') }}
+	{{ Form::text('category') }}	
+	@endif
 	{{ Form::label('comments', 'Comments') }}
 	{{ Form::textarea('comments') }}
 	
