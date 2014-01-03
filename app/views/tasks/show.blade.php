@@ -24,6 +24,7 @@ TooDoos | All Tasks
 					<th>Updated At</th>
 					<th>Completed?</th>
 					<th>Comments</th>
+					<th>Delete Task</th>
 				</thead>
 		@foreach($tasks as $task)
 				<tbody>
@@ -33,6 +34,9 @@ TooDoos | All Tasks
 					<td>{{ $task->updated_at }}</td>
 					<td>{{ $task->complete }}</td>
 					<td>{{ $task->comments }}</td>
+					{{ Form::open(array('route' => array('tasks.destroy', $task->id), 'method' => 'delete')) }}
+					<td><a href="{{ URL::route('tasks.destroy', $task->id) }}"><button type="submit" class="button tiny radius alert">Delete</button></a></td>
+					{{ Form::close() }}
 		@endforeach
 			</table>
 		

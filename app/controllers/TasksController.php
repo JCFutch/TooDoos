@@ -100,10 +100,12 @@ class TasksController extends BaseController {
 		if (Input::get('complete') === 'yes')
 		{
 			$tasks->complete = "Complete!";
+			
 		}
 		else
 		{
 			$tasks->complete = "Not Complete.";
+			
 		}
 		$tasks->save();
 		
@@ -123,7 +125,7 @@ class TasksController extends BaseController {
 		$tasks = Task::find($id);
 		$tasks->delete();
 		
-		Return Redirect::to('/');
+		Return Redirect::to('tasks/show');
 	}
 	
 	public function openTasks()
@@ -131,8 +133,12 @@ class TasksController extends BaseController {
 		//Show tasks that are open in the database
 		$tasks = DB::table('tasks')->orderBy('created_at', 'asc')->get();
 		
+		$completions = Task::where('complete', '===', 'Complete!')->count();
+		
+		
 		return View::make('home')
-			->with('tasks', $tasks);
+			->with('tasks', $tasks)
+			->with('completions', $completions);
 	}
 	
 	
