@@ -12,11 +12,7 @@ TooDoos | To-Do App
 <section class="main-section" style="margin-top: 50px;">
 			<div class="row">
 				<div class="large-12 columns">
-				@if( ! $tasks || $completions === 0) 
-				
-				  <h5>There are no tasks that need to be completed.</h5>
-				
-				@else
+				@if($tasks)
 				
 					<center><table>
 						<thead>
@@ -29,6 +25,7 @@ TooDoos | To-Do App
 						</thead>
 					
 						@foreach($tasks as $task)
+							@if($task->complete === "Not Complete.")
 						<tbody>
 							<td>{{ $task->taskname }}</td>
 							<td>{{ $task->category }}</td>
@@ -37,8 +34,14 @@ TooDoos | To-Do App
 							<td>{{ $task->comments }}</td>
 							<td><button data-reveal-id="edit" data-reveal-ajax="{{ URL::to('tasks/edit', $task->id) }}" class="button tiny radius">Edit</button></td>
 						</tbody>
+							@endif
 						@endforeach
 					</table></center>
+					
+				@else
+				
+					<h5>There are no tasks to be completed.</h5>
+					
 				@endif
 			    </div>
 			</div>

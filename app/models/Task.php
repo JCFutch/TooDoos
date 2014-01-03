@@ -6,4 +6,10 @@ class Task extends Eloquent {
 	public static $rules = array();
 	
 	protected $table = 'tasks';
+	
+	public function scopeCompleted($query)
+	{
+		 $query->where('complete', '=', 'Complete!');
+	}
+	
 }

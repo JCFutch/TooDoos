@@ -131,10 +131,11 @@ class TasksController extends BaseController {
 	public function openTasks()
 	{
 		//Show tasks that are open in the database
-		$tasks = DB::table('tasks')->orderBy('created_at', 'asc')->get();
+		$tasks = DB::table('tasks')->where('complete', '=', "Not Complete.")->orderBy('created_at', 'asc')->get();
 		
-		$completions = Task::where('complete', '===', 'Complete!')->count();
-		
+		$completions = Task::completed()->get();
+		$completion = $completions->count();
+		//return $completion;
 		
 		return View::make('home')
 			->with('tasks', $tasks)

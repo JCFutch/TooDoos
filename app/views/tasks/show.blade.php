@@ -16,7 +16,7 @@ TooDoos | All Tasks
 		<h5>There are no tasks found!</h5>
 		
 	@else
-			<table>
+			<center><table>
 				<thead>
 					<th>Task Name</th>
 					<th>Category</th>
@@ -38,7 +38,7 @@ TooDoos | All Tasks
 					<td><a href="{{ URL::route('tasks.destroy', $task->id) }}"><button type="submit" class="button tiny radius alert">Delete</button></a></td>
 					{{ Form::close() }}
 		@endforeach
-			</table>
+			</table></center>
 		
 	@endif
 	

@@ -14,7 +14,7 @@
 	{{ Form::textarea('comments') }}
 	
 	{{ Form::label('complete', 'Task Completed?') }}
-	{{ Form::checkbox('complete', 'yes', false) }}
+	<input type="checkbox" name="complete" value="yes" />
 	
 	<br />
 	
