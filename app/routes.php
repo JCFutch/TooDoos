@@ -13,5 +13,15 @@
 
 Route::get('/', function()
 {
-	return View::make('hello');
+	return View::make('home');
 });
+
+Route::get('/', 'TasksController@openTasks');
+
+Route::resource('tasks', 'TasksController');
+
+Route::get('tasks/edit/{id}', 'TasksController@edit');
+
+Route::post('tasks/edit', 'TasksController@update');
+
+
