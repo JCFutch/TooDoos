@@ -28,7 +28,7 @@
 	<a href="#" style="margin-right: 40px;">MENU</a>
 	<ul class="dropdown">
 	<li><a href="{{ URL::to('tasks/create') }}" data-reveal-id="create" data-reveal-ajax="true">Create Task&nbsp;&nbsp;&plus;</a></li>
-	<li><a href="{{ URL::to('tasks/show') }}">Show All Tasks</a></li>
+	<li><a href="{{ URL::to('tasks') }}">Show All Tasks</a></li>
 	<!-- <li><a href="#">Show Unfinished Tasks</a></li> -->
 	</ul>
 	</li>

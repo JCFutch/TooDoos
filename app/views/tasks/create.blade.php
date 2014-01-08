@@ -9,12 +9,12 @@
 	@if( ! $categories)
 	{{ Form::label('category', 'Category') }}
 	{{ Form::text('category') }}
-	@else
-	{{ Form::label('category', 'Category') }}
-	{{ Form::select('category', array('' => ' -- Select --') + $categories, Input::old('category')) }}
-	
-	{{ Form::label('or', 'Or Add New Category') }}
+	@else	
+	{{ Form::label('category', 'Add New Category') }}
 	{{ Form::text('category') }}	
+	
+	{{ Form::label('categoryList', 'Choose Category') }}
+	{{ Form::select('categoryList', array('' => '-- Select --') + $categories, Input::old('category')) }}
 	@endif
 	{{ Form::label('comments', 'Comments') }}
 	{{ Form::textarea('comments') }}

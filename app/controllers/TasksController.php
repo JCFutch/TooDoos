@@ -9,7 +9,13 @@ class TasksController extends BaseController {
 	 */
 	public function index()
 	{
-        return View::make('tasks.index');
+       //Get all tasks in the database and show them. This will show both completed and uncompleted tasks.
+		
+		$tasks = DB::table('tasks')->orderBy('created_at', 'desc')->get();
+		
+		
+        return View::make('tasks.index')
+			->with('tasks', $tasks);
 	}
 
 	/**
@@ -21,8 +27,7 @@ class TasksController extends BaseController {
 	{
 	
 	  //As more categories are added by the user, they will show up in the drop down list
-	  $categories = DB::table('tasks')->lists('category', 'id');
-	
+	  $categories = Task::lists('category', 'category');	
 	
 	  return View::make('tasks.create')
 		->with('categories', $categories);
@@ -39,7 +44,14 @@ class TasksController extends BaseController {
 		$tasks = new Task;
 		
 		$tasks->taskname = Input::get('taskname');
+		if (Input::get('categoryList'))
+		{
+			$tasks->category = Input::get('categoryList');
+		}
+		else
+		{
 		$tasks->category = Input::get('category');
+		}
 		$tasks->comments = Input::get('comments');
 		if (Input::get('complete') === 'yes')
 		{
@@ -63,13 +75,10 @@ class TasksController extends BaseController {
 	 */
 	public function show($id)
 	{
-		//Get all tasks in the database and show them. This will show both completed and uncompleted tasks.
-		
-		$tasks = DB::table('tasks')->orderBy('created_at', 'desc')->get();
+		//Retrieve tasks from database by id
 		
 		
-        return View::make('tasks.show')
-			->with('tasks', $tasks);
+		return View::make('tasks.show');
 	}
 
 	/**
@@ -125,7 +134,7 @@ class TasksController extends BaseController {
 		$tasks = Task::find($id);
 		$tasks->delete();
 		
-		Return Redirect::to('tasks/show');
+		Return Redirect::to('tasks');
 	}
 	
 	public function openTasks()
