@@ -24,4 +24,11 @@ Route::get('tasks/edit/{id}', 'TasksController@edit');
 
 Route::post('tasks/edit', 'TasksController@update');
 
+Route::get('tasks/show/{taskname}', array('as' => 'task', function($taskname)
+{
+	return View::make('tasks/show')
+		->with('task', Task::where('taskname', $taskname)->first());
+	
+}));
+
 

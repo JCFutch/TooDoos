@@ -11,11 +11,13 @@ class TasksController extends BaseController {
 	{
        //Get all tasks in the database and show them. This will show both completed and uncompleted tasks.
 		
-		$tasks = DB::table('tasks')->orderBy('created_at', 'desc')->get();
+		$tasksIncomplete = Task::where('complete', '=', 'Not Complete.')->orderBy('created_at', 'desc')->get();
+		$tasksComplete = Task::where('complete', '=', 'Complete!')->orderBy('created_at', 'desc')->get();
 		
 		
         return View::make('tasks.index')
-			->with('tasks', $tasks);
+			->with('tasksIncomplete', $tasksIncomplete)
+			->with('tasksComplete', $tasksComplete);
 	}
 
 	/**
@@ -77,8 +79,11 @@ class TasksController extends BaseController {
 	{
 		//Retrieve tasks from database by id
 		
+		//$tasks = Task::find($id);
 		
-		return View::make('tasks.show');
+		
+		//return View::make('tasks.show')
+			//->with('tasks', $tasks);
 	}
 
 	/**
