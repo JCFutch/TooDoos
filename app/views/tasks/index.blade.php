@@ -66,7 +66,7 @@ TooDoos | All Tasks
 					<th>Category</th>
 					<th>Created At</th>
 					<th>Due Date</th>
-					<th>Completed At</th>
+					<th>Completed Date</th>
 					<th>Comments</th>
 					<th>Delete Task</th>
 				</thead>
@@ -77,7 +77,7 @@ TooDoos | All Tasks
 					<td>{{ $task->category }}</td>
 					<td>{{ $task->created_at }}</td>
 					<td>{{ $task->goalcomplete }}</td>
-					<td>{{ $task->updated_at }}</td>
+					<td>{{ date("d F, Y",strtotime($task->updated_at)) }}</td>
 					<td>{{ $task->comments }}</td>
 					{{ Form::open(array('route' => array('tasks.destroy', $task->id), 'method' => 'delete')) }}
 					<td><a href="{{ URL::route('tasks.destroy', $task->id) }}"><button type="submit" class="button tiny radius alert">Delete</button></a></td>
