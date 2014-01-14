@@ -43,6 +43,17 @@ class TasksController extends BaseController {
 	public function store()
 	{
 		//Puts new tasks in to the database
+		
+	$rules = 
+		array(
+			'taskname' => 'required',
+			'category' => 'required',
+			'categoryList' => 'required',
+			'goaldate' => 'required',
+		);
+	$validator = Validator::make(Input::all(), $rules);
+	
+
 		$tasks = new Task;
 		
 		$tasks->taskname = Input::get('taskname');
@@ -68,7 +79,9 @@ class TasksController extends BaseController {
 		
 		
 		Return Redirect::to('/');
+	
 	}
+	
 
 	/**
 	 * Display the specified resource.
@@ -112,6 +125,7 @@ class TasksController extends BaseController {
 		$tasks->taskname = Input::get('taskname');
 		$tasks->category = Input::get('category');
 		$tasks->comments = Input::get('comments');
+		$tasks->goalcomplete = Input::get('changedue');
 		$tasks->save();
 		
 		//redirect to page

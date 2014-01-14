@@ -24,6 +24,13 @@
 	
 	{{ Form::label('goalcomplete', 'Due Date:') }}
 	<p style="font-size: 13px;">{{ $task->goalcomplete }}</p>
+	{{ Form::label('changedue', 'Change Due Date:') }}
+	{{ Form::text('changedue', null,  array('class' => 'datepicker')) }}
+	<script>
+			$('.datepicker').pickadate({
+				format: 'mmmm d, yyyy'
+				});
+	</script>
 	
 	<br />
 	

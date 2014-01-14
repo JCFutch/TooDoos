@@ -6,6 +6,7 @@
 
 	{{ Form::label('taskname', 'Task Name') }}
 	{{ Form::text('taskname') }}
+
 	@if( ! $categories)
 	{{ Form::label('category', 'Category') }}
 	{{ Form::text('category') }}

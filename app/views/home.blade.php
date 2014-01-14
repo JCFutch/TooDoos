@@ -12,7 +12,12 @@ TooDoos | To-Do App
 <section class="main-section" style="margin-top: 50px;">
 			<div class="row">
 				<div class="large-12 columns">
+				
+				
+				
 				@if($tasks)
+				
+					<h2 style="text-align: center;">Tasks to be Completed</h2></br />
 				
 					<center><table>
 						<thead>
