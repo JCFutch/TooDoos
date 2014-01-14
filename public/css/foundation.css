@@ -1920,7 +1920,7 @@ button, .button {
   /*     @else                            { font-size: $padding - rem-calc(2); } */
   background-color: #2ba6cb;
   border-color: #2795b6;
-  color: white;
+  color: #FFF;
   -webkit-transition: background-color 300ms ease-out;
   -moz-transition: background-color 300ms ease-out;
   transition: background-color 300ms ease-out;
