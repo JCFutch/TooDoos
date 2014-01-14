@@ -113,7 +113,7 @@
 .picker__nav--next:hover {
   cursor: pointer;
   color: #000000;
-  background: #b1dcfb;
+  background: transparent;
 }
 .picker__nav--disabled,
 .picker__nav--disabled:hover,
@@ -234,6 +234,7 @@
   padding: .66em 0;
   font-weight: bold;
   width: 50%;
+  color: #000;
   display: inline-block;
   vertical-align: bottom;
 }
@@ -241,7 +242,7 @@
 .picker__button--clear:hover {
   cursor: pointer;
   color: #000000;
-  background: #b1dcfb;
+  background: transparent;
   border-bottom-color: #b1dcfb;
 }
 .picker__button--today:focus,
