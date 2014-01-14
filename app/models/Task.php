@@ -2,6 +2,8 @@
 
 class Task extends Eloquent {
 	protected $guarded = array();
+	
+	protected $fillable = array('complete');
 
 	public static $rules = array();
 	
@@ -11,5 +13,6 @@ class Task extends Eloquent {
 	{
 		 $query->where('complete', '=', 'Complete!');
 	}
+	
 	
 }

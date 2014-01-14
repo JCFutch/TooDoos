@@ -12,6 +12,11 @@
 
 </div>
 
+<div id="complete" class="reveal-modal tiny" data-reveal>
+
+
+</div>
+
 <div id="create" class="reveal-modal tiny" data-reveal>
 
 </div>

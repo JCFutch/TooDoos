@@ -13,8 +13,14 @@
 	{{ Form::label('comments', 'Comments') }}
 	{{ Form::textarea('comments') }}
 	
-	{{ Form::label('complete', 'Task Completed?') }}
-	<input type="checkbox" name="complete" value="yes" />
+	<!--{{ Form::label('complete', 'Task Completed?') }}
+	<input type="checkbox" name="complete" value="yes" />-->
+	
+	{{ Form::label('created_at', 'Task Created At:') }}
+	<p>{{ $task->created_at }}</p>
+	
+	{{ Form::label('updated_at', 'Task Updated At:') }}
+	<p>{{ $task->updated_at }}</p>
 	
 	<br />
 	

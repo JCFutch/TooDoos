@@ -93,7 +93,7 @@ class TasksController extends BaseController {
 	 * @return Response
 	 */
 	public function edit($id)
-	{
+	{	
         return View::make('tasks.edit')->with('task', Task::find($id));
 	}
 
@@ -111,21 +111,42 @@ class TasksController extends BaseController {
 		$tasks->taskname = Input::get('taskname');
 		$tasks->category = Input::get('category');
 		$tasks->comments = Input::get('comments');
-		if (Input::get('complete') === 'yes')
-		{
-			$tasks->complete = "Complete!";
-			
-		}
-		else
-		{
-			$tasks->complete = "Not Complete.";
-			
-		}
 		$tasks->save();
 		
 		//redirect to page
 		Return Redirect::to('/');
 	}
+	
+	/**
+	 * Complete the task
+	 *
+	 * @param int $id
+	 * @return Response
+	 */
+	 public function complete($id)
+	 {
+	 
+		//Find the task by id and allow to complete
+		return View::make('tasks.complete')->with('task', Task::find($id));
+	 }
+	
+	/**
+	 * Update the completion
+	 *
+	 * @param int $id
+	 * @return Response
+	 */
+	public function completed($id)
+	{
+		
+		$tasks = Task::find($id);
+		$tasks->complete = 'Complete!';
+		$tasks->save();
+		
+		//Redirect to main tasks list
+		return Redirect::to('/');
+	}
+	
 
 	/**
 	 * Remove the specified resource from storage.

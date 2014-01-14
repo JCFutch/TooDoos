@@ -11,7 +11,8 @@ class TasksTableSeeder extends Seeder {
 		
 			'taskname' => 'Test Task',
 			'category' => 'Personal',
-			'comment' => 'This is just a test comment'
+			'complete' => 'Not Complete.'
+			'comments' => 'This is just a test comment'
 
 		);
 

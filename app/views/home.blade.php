@@ -18,10 +18,11 @@ TooDoos | To-Do App
 						<thead>
 							<th>Task Name</th>
 							<th>Category</th>
-							<th>Created At</th>
-							<th>Updated At</th>
+							<!--<th>Created At</th>
+							<th>Updated At</th>-->
 							<th>Comments</th>
 							<th>Edit Task</th>
+							<th>Complete Task?</th>
 						</thead>
 					
 						@foreach($tasks as $task)
@@ -29,10 +30,11 @@ TooDoos | To-Do App
 						<tbody>
 							<td>{{ $task->taskname }}</td>
 							<td>{{ $task->category }}</td>
-							<td>{{ $task->created_at }}</td>
-							<td>{{ $task->updated_at }}</td>
+							<!--<td>{{ $task->created_at }}</td>
+							<td>{{ $task->updated_at }}</td>-->
 							<td>{{ $task->comments }}</td>
 							<td><button data-reveal-id="edit" data-reveal-ajax="{{ URL::to('tasks/edit', $task->id) }}" class="button tiny radius">Edit</button></td>
+							<td><center><button data-reveal-id="complete" data-reveal-ajax="{{ URL::to('tasks/complete', $task->id) }}" class="tiny radius success">Complete</button></center></td>
 						</tbody>
 							@endif
 						@endforeach
