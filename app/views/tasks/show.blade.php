@@ -16,7 +16,8 @@ TooDoos | Task
 		<h1 style="text-decoration: underline;">Task Overview</h1>
 		<br />
 		<h3>Task Name: {{ $task->taskname }}</h3>
-		<h5>Date Created: {{ $task->created_at }}</h5>
+		<h5>Date Created: {{ date("d F, Y",strtotime($task->created_at)) }}</h5>
+		<h5>Due Date: {{ $task->goalcomplete }}</h5>
 		<h5>Is this complete?: {{ $task->complete }}</h5>
 		<h5>Comments: {{ $task->comments }}</h5>
 	

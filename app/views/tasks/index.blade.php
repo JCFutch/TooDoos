@@ -33,7 +33,7 @@ TooDoos | All Tasks
 				<tbody>
 					<td><a href="{{ URL::route('task', $task->taskname) }}">{{ $task->taskname }}</a></td>
 					<td>{{ $task->category }}</td>
-					<td>{{ $task->created_at }}</td>
+					<td>{{ date("d F, Y",strtotime($task->created_at)) }}</td>
 					<td>{{ $task->goalcomplete }}</td>
 					<td>{{ $task->comments }}</td>
 					{{ Form::open(array('route' => array('tasks.destroy', $task->id), 'method' => 'delete')) }}
