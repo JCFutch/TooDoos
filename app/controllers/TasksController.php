@@ -63,6 +63,7 @@ class TasksController extends BaseController {
 		{
 			$tasks->complete = "Not Complete.";
 		}
+		$tasks->goalcomplete = Input::get('goaldate');
 		$tasks->save();
 		
 		

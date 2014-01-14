@@ -7,9 +7,12 @@
 	
 	<!-- Included CSS files -->
     <link rel="stylesheet" href="{{ asset('css/foundation.css') }}" />
+	<link rel="stylesheet" href="{{ asset('css/default.css') }}" />
+	<link rel="stylesheet" href="{{ asset('css/default.date.css') }}" />
 	
 	<!-- Included JS files -->
     <script src="{{ asset('js/modernizr.js') }}"></script>
+	
 	
   </head>
   <body>

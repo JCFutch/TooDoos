@@ -24,8 +24,12 @@
 	<script src="{{ asset('js/vendor/jquery.js') }}"></script>
 	<script src="{{ asset('js/vendor/fastclick.js') }}"></script>
 	<script src="{{ asset('js/foundation.min.js') }}"></script>
+	
+	<script src="{{ asset('js/vendor/picker.js') }}"></script>
+	<script src="{{ asset('js/vendor/picker.date.js') }}"></script>
+	<script src="{{ asset('js/vendor/legacy.js') }}"></script>
 
-
+	
 <script>
 			$(document).foundation();			
 </script>

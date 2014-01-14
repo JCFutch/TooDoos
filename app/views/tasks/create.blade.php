@@ -19,8 +19,11 @@
 	{{ Form::label('comments', 'Comments') }}
 	{{ Form::textarea('comments') }}
 	
-	{{ Form::label('completionDate', 'What date to complete by:') }}
-	<p>Will be date picker here</p>
+	{{ Form::label('completionDate', 'Due Date:') }}
+	{{ Form::text('goaldate', null, array('class' => 'datepicker')) }}
+	<script>
+			$('.datepicker').pickadate();
+	</script>
 	
 	{{ Form::submit('Create', array('class' => 'button tiny radius success')) }}
 	<a class="close-reveal-modal">&#215;</a>
