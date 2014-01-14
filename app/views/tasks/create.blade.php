@@ -22,7 +22,9 @@
 	{{ Form::label('completionDate', 'Due Date:') }}
 	{{ Form::text('goaldate', null, array('class' => 'datepicker')) }}
 	<script>
-			$('.datepicker').pickadate();
+			$('.datepicker').pickadate({
+				format: 'mmmm d, yyyy'
+				});
 	</script>
 	
 	{{ Form::submit('Create', array('class' => 'button tiny radius success')) }}

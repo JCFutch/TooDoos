@@ -17,10 +17,10 @@
 	<input type="checkbox" name="complete" value="yes" />-->
 	
 	{{ Form::label('created_at', 'Date Created:') }}
-	<p style="font-size: 13px;">{{ date("d F, Y",strtotime($task->created_at)) }}</p>
+	<p style="font-size: 13px;">{{ $task->created_at->format('F d, Y') }}</p>
 	
 	{{ Form::label('updated_at', 'Date Updated:') }}
-	<p style="font-size: 13px;">{{ date("d F, Y",strtotime($task->updated_at)) }}</p>
+	<p style="font-size: 13px;">{{ $task->updated_at->format('F d, Y') }}</p>
 	
 	{{ Form::label('goalcomplete', 'Due Date:') }}
 	<p style="font-size: 13px;">{{ $task->goalcomplete }}</p>

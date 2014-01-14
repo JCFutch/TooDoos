@@ -64,7 +64,7 @@ TooDoos | All Tasks
 				<thead>
 					<th>Task Name</th>
 					<th>Category</th>
-					<th>Created At</th>
+					<th>Created On</th>
 					<th>Due Date</th>
 					<th>Completed Date</th>
 					<th>Comments</th>
@@ -75,7 +75,7 @@ TooDoos | All Tasks
 				<tbody>
 					<td><a href="{{ URL::route('task', $task->taskname) }}">{{ $task->taskname }}</a></td>
 					<td>{{ $task->category }}</td>
-					<td>{{ $task->created_at }}</td>
+					<td>{{ $task->created_at->format('F d, Y') }}</td>
 					<td>{{ $task->goalcomplete }}</td>
 					<td>{{ date("d F, Y",strtotime($task->updated_at)) }}</td>
 					<td>{{ $task->comments }}</td>
