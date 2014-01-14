@@ -11,7 +11,7 @@ class Task extends Eloquent {
 	
 	public function scopeCompleted($query)
 	{
-		 $query->where('complete', '=', 'Complete!');
+		 $query->where('complete', '=', 'Complete!'); //This is for main view.
 	}
 	
 	
