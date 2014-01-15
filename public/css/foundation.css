@@ -4009,9 +4009,9 @@ ul.off-canvas-list {
     max-width: 800px; }
 
 table {
-  background: white;
+  background: whitesmoke;
   margin-bottom: 1.25rem;
-  border: solid 1px #dddddd; }
+  border: solid 2px #dddddd; }
   table thead,
   table tfoot {
     background: whitesmoke;
@@ -4023,7 +4023,8 @@ table {
       padding: 0.5rem 0.625rem 0.625rem;
       font-size: 0.875rem;
       color: #222222;
-      text-align: left; }
+      text-align: center;
+	  text-decoration: underline; }
   table tr th,
   table tr td {
     padding: 0.5625rem 0.625rem;
@@ -5183,3 +5184,39 @@ th.hide-for-touch {
 
 .touch th.show-for-touch {
   display: table-cell !important; }
+  
+/*Custom CSS rules*/
+
+#dateContainer { 
+	
+
+
+}
+
+#dates {
+	
+    padding-bottom: 20px;
+
+}
+
+
+#dates p {  
+    
+    padding: 15px;
+    font-size: 13px;
+    display: inline;
+	text-align: center;
+	margin-left: 25px;
+    
+}
+
+#datelabels label { 
+  
+    display: inline;
+    padding: 14px;
+    margin-left: 40px;
+    text-align: center;
+    text-decoration: underline;
+    
+  
+}
