@@ -8,7 +8,7 @@
 			</div>
 </div>
 
-<div id="edit" class="reveal-modal tiny" data-reveal>
+<div id="edit" class="reveal-modal small" data-reveal>
 
 </div>
 
