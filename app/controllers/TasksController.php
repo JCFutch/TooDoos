@@ -125,7 +125,10 @@ class TasksController extends BaseController {
 		$tasks->taskname = Input::get('taskname');
 		$tasks->category = Input::get('category');
 		$tasks->comments = Input::get('comments');
-		$tasks->goalcomplete = Input::get('changedue');
+		if (Input::get('changedue'))
+		{
+			$tasks->goalcomplete = Input::get('changedue');
+		}
 		$tasks->save();
 		
 		//redirect to page
